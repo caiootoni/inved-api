@@ -1,7 +1,6 @@
 package com.inved.model;
 
 import jakarta.persistence.*;
-
 import java.util.List;
 
 @Entity
@@ -17,16 +16,18 @@ public class User {
             inverseJoinColumns = @JoinColumn(name = "role_id"))
     private List<Role> roles;
 
+    // Construtor padrão
     public User() {
     }
 
-    public User(Long id, String email, String password, List<Role> roles) {
-        this.id = id;
+    // Construtor com parâmetros
+    public User(String email, String password, List<Role> roles) {
         this.email = email;
         this.password = password;
         this.roles = roles;
     }
 
+    // Getters e Setters
     public Long getId() {
         return id;
     }

@@ -1,5 +1,6 @@
 package com.inved.controller;
 
+import com.inved.dto.CreateUserDto;
 import com.inved.dto.LoginUserDto;
 import com.inved.dto.RecoveryJwtTokenDto;
 import com.inved.service.UserService;
@@ -21,7 +22,11 @@ public class UserController {
         return new ResponseEntity<>(token, HttpStatus.OK);
     }
 
-
+    @PostMapping
+    public ResponseEntity<Void> createUser(@RequestBody CreateUserDto createUserDto) {
+        userService.createUser(createUserDto);
+        return new ResponseEntity<>(HttpStatus.CREATED);
+    }
 
 
     @GetMapping("/test")
