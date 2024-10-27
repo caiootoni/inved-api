@@ -1,7 +1,6 @@
 package com.inved.infra.security;
 
 import com.inved.model.User;
-import lombok.Getter;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -9,7 +8,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 import java.util.Collection;
 import java.util.stream.Collectors;
 
-@Getter
+
 public class UserDetailsImpl implements UserDetails {
     private User user;
 
